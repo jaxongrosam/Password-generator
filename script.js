@@ -106,53 +106,53 @@ var special = [
 //need to write an if statement to validate that at least one character type was chosen (alert)
 // I need to set variables that have a value equal to the character types
 
-// function userPrompts() {
-//   var length = parseInt(
-//     prompt(
-//       "How long would you like your password to be? (must be between 8-128 characters"
-//     )
-//   );
+function userPrompts() {
+  var length = parseInt(
+    prompt(
+      "How long would you like your password to be? (must be between 8-128 characters"
+    )
+  );
 
-//   if (isNaN(length)) {
-//     alert("length must have a numeric value");
-//     return;
-//   }
+  if (isNaN(length)) {
+    alert("length must have a numeric value");
+    return;
+  }
 
-//   if (length < 8 || length > 128) {
-//     alert("length must be between 8 and 128 characters");
-//     return;
-//   }
+  if (length < 8 || length > 128) {
+    alert("length must be between 8 and 128 characters");
+    return;
+  }
 
-//   var ifLower = confirm("Do you want to include lowercase letters?");
+  var ifLower = confirm("Do you want to include lowercase letters?");
 
-//   var ifUpper = confirm("Do you want to include uppercase letters?");
+  var ifUpper = confirm("Do you want to include uppercase letters?");
 
-//   var ifNum = confirm("Do you want to include numbers?");
+  var ifNum = confirm("Do you want to include numbers?");
 
-//   var ifSpec = confirm("Do you want to include special characters?");
+  var ifSpec = confirm("Do you want to include special characters?");
 
-//   if (
-//     ifLower === false &&
-//     ifUpper === false &&
-//     ifNum === false &&
-//     ifSpec === false
-//   ) {
-//     alert("At least one character type must be selected");
-//     return;
-//   }
+  if (
+    ifLower === false &&
+    ifUpper === false &&
+    ifNum === false &&
+    ifSpec === false
+  ) {
+    alert("At least one character type must be selected");
+    return;
+  }
 
-//   var newPassword = generatePassword(length, ifLower, ifUpper, ifNum, ifSpec);
-//   return newPassword;
-// }
+  var newPassword = generatePassword(length, ifLower, ifUpper, ifNum, ifSpec);
+  return newPassword;
+}
 
-// function generatePassword() {}
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function generatePassword() {}
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
-// }
+  passwordText.value = password;
+}
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
