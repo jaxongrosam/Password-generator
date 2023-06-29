@@ -15,6 +15,13 @@
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 
+// im going to need prompts
+// need a way to select which criteria to iclude (confirms?)
+// need a prompt for length (between 8 -128)
+// need confirms for each character type
+//need to write an if statement to validate that at least one character type was chosen (alert)
+// I need to set variables that have a value equal to the character types
+
 var generateBtn = document.querySelector("#generate");
 
 var lowerCase = [
@@ -98,13 +105,6 @@ var special = [
   "|",
   "~",
 ];
-
-// im going to need prompts
-// need a way to select which criteria to iclude (confirms?)
-// need a prompt for length (between 8 -128)
-// need confirms for each character type
-//need to write an if statement to validate that at least one character type was chosen (alert)
-// I need to set variables that have a value equal to the character types
 
 function userPrompts() {
   var length = parseInt(
