@@ -22,9 +22,9 @@
 //need to write an if statement to validate that at least one character type was chosen (alert)
 // I need to set variables that have a value equal to the character types
 
-const generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
-const lowerCase = [
+var lowerCase = [
   "a",
   "b",
   "c",
@@ -53,7 +53,7 @@ const lowerCase = [
   "z",
 ];
 
-const upperCase = [
+var upperCase = [
   "A",
   "B",
   "C",
@@ -82,9 +82,9 @@ const upperCase = [
   "Z",
 ];
 
-const numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-const special = [
+var special = [
   "!",
   "@",
   "#",
@@ -107,9 +107,9 @@ const special = [
 ];
 
 function userPrompts() {
-  const length = parseInt(
+  var length = parseInt(
     prompt(
-      "How long would you like your password to be? (must be between 8-128 characters)"
+      "How long would you like your password to be? (must be between 8-128 characters"
     )
   );
 
@@ -123,13 +123,13 @@ function userPrompts() {
     return;
   }
 
-  const ifLower = confirm("Do you want to include lowercase letters?");
+  var ifLower = confirm("Do you want to include lowercase letters?");
 
-  const ifUpper = confirm("Do you want to include uppercase letters?");
+  var ifUpper = confirm("Do you want to include uppercase letters?");
 
-  const ifNum = confirm("Do you want to include numbers?");
+  var ifNum = confirm("Do you want to include numbers?");
 
-  const ifSpec = confirm("Do you want to include special characters?");
+  var ifSpec = confirm("Do you want to include special characters?");
 
   if (
     ifLower === false &&
@@ -141,31 +141,15 @@ function userPrompts() {
     return;
   }
 
-  const newPassword = generatePassword(length, ifLower, ifUpper, ifNum, ifSpec);
+  var newPassword = generatePassword(length, ifLower, ifUpper, ifNum, ifSpec);
   return newPassword;
 }
 
-function Randomized(array)
-  const randomI = Math.floor(Math.random() * array.);
-  const randomEl = array[randomI];
-
-  return randomEl.toString();
-
-function generatePassword(length, ifLower, ifUpper, ifNum, ifSpec) {
-  const choices = passwordChoices();
-  const whatPassword = [];
-  const choiceCharacter = [];
-  const actualCharacter = [];
-
-  if (choices.ifLower) {
-    choiceCharacter = choiceCharacters.concat(lowerCase);
-    actualCharacter.push()
-  }
-}
+function generatePassword() {}
 // Write password to the #password input
 function writePassword() {
-  const password = generatePassword();
-  const passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
