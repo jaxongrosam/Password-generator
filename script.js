@@ -109,7 +109,7 @@ const special = [
 function userPrompts() {
   const length = parseInt(
     prompt(
-      "How long would you like your password to be? (must be between 8-128 characters"
+      "How long would you like your password to be? (must be between 8-128 characters)"
     )
   );
 
@@ -145,7 +145,23 @@ function userPrompts() {
   return newPassword;
 }
 
-function generatePassword() {}
+function Randomized(array)
+  const randomI = Math.floor(Math.random() * array.);
+  const randomEl = array[randomI];
+
+  return randomEl.toString();
+
+function generatePassword(length, ifLower, ifUpper, ifNum, ifSpec) {
+  const choices = passwordChoices();
+  const whatPassword = [];
+  const choiceCharacter = [];
+  const actualCharacter = [];
+
+  if (choices.ifLower) {
+    choiceCharacter = choiceCharacters.concat(lowerCase);
+    actualCharacter.push()
+  }
+}
 // Write password to the #password input
 function writePassword() {
   const password = generatePassword();
