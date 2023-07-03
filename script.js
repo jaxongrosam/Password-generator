@@ -145,7 +145,45 @@ function userPrompts() {
   return newPassword;
 }
 
-function generatePassword() {}
+function randomize(array) {
+  var randomI = Math.floor(Math.random() * array.length);
+  var randomEl = array[randomI];
+
+  return randomEl;
+}
+
+function generatePassword() {
+  var choices = userPrompts();
+  var finished = [];
+  var possibilities = [];
+  var actualities = [];
+
+  if (choices.ifLower) {
+    possibilities = possibilities.concat(lowerCase);
+    actualities.push(randomize(lowerCase));
+  }
+
+  if (choices.ifUpper) {
+    possibilities = possibilities.concat(upperCase);
+    actualities.push(randomize(upperCase));
+  }
+
+  if (choices.ifNum) {
+    possibilities = possibilities.concat(numeric);
+    actualities.push(randomize(numeric));
+  }
+
+  if (choices.ifSpec) {
+    possibilities = possibilities.concat(special);
+    actualities.push(randomize(special));
+  }
+
+  for (var myChoices of choices) {
+    myChoices.push(finished);
+  }
+
+  return finished.join(" ");
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
