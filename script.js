@@ -22,9 +22,9 @@
 //need to write an if statement to validate that at least one character type was chosen (alert)
 // I need to set variables that have a value equal to the character types
 
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
 
-var lowerCase = [
+const lowerCase = [
   "a",
   "b",
   "c",
@@ -53,7 +53,7 @@ var lowerCase = [
   "z",
 ];
 
-var upperCase = [
+const upperCase = [
   "A",
   "B",
   "C",
@@ -82,9 +82,9 @@ var upperCase = [
   "Z",
 ];
 
-var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-var special = [
+const special = [
   "!",
   "@",
   "#",
@@ -107,7 +107,7 @@ var special = [
 ];
 
 function userPrompts() {
-  var length = parseInt(
+  const length = parseInt(
     prompt(
       "How long would you like your password to be? (must be between 8-128 characters"
     )
@@ -123,13 +123,13 @@ function userPrompts() {
     return;
   }
 
-  var ifLower = confirm("Do you want to include lowercase letters?");
+  const ifLower = confirm("Do you want to include lowercase letters?");
 
-  var ifUpper = confirm("Do you want to include uppercase letters?");
+  const ifUpper = confirm("Do you want to include uppercase letters?");
 
-  var ifNum = confirm("Do you want to include numbers?");
+  const ifNum = confirm("Do you want to include numbers?");
 
-  var ifSpec = confirm("Do you want to include special characters?");
+  const ifSpec = confirm("Do you want to include special characters?");
 
   if (
     ifLower === false &&
@@ -141,22 +141,22 @@ function userPrompts() {
     return;
   }
 
-  var newPassword = generatePassword(length, ifLower, ifUpper, ifNum, ifSpec);
+  const newPassword = generatePassword(length, ifLower, ifUpper, ifNum, ifSpec);
   return newPassword;
 }
 
 function randomize(array) {
-  var randomI = Math.floor(Math.random() * array.length);
-  var randomEl = array[randomI];
+  const randomI = Math.floor(Math.random() * array.length);
+  const randomEl = array[randomI];
 
   return randomEl;
 }
 
 function generatePassword() {
-  var choices = userPrompts();
-  var finished = [];
-  var possibilities = [];
-  var actualities = [];
+  const choices = userPrompts();
+  const finished = [];
+  const possibilities = [];
+  const actualities = [];
 
   if (choices.ifLower) {
     possibilities = possibilities.concat(lowerCase);
@@ -186,8 +186,8 @@ function generatePassword() {
 }
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  const password = generatePassword();
+  const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
